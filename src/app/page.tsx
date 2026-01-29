@@ -149,20 +149,15 @@ export default function Page() {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-10">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <div>
           <h1 className="text-2xl font-semibold">PoC Deterministic UI</h1>
-          <small className="text-gray-500">Powered only by Guinness and crisps</small>
         </div>
-        <button
-          type="button"
-          onClick={reset}
-          className="inline-flex items-center rounded-lg  border border-red-300 px-3 py-1.5 text-sm font-medium text-red-600 cursor-pointer
-    hover:bg-red-50  focus-visible:outline-none  focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 transition"
-        >
+        <button type="button" onClick={reset} className="inline-flex items-center rounded-lg p-0 text-sm font-medium text-red-600 cursor-pointer hover:underline hover:underline-offset-2  transition">
           Reset
         </button>
       </div>
+      <small className="text-gray-500">Powered by Guinness and crisps only</small>
 
       {!tree ? (
         <div className="mt-4 flex flex-col gap-2 min-[481px]:flex-row">
@@ -228,9 +223,9 @@ export default function Page() {
 
       <section className="mt-6 rounded-xl border p-4 border-gray-300">
         <div className="text-xs text-gray-500">Raw tree</div>
-        <pre className="mt-2 max-h-96 overflow-auto rounded bg-gray-50 p-3 text-xs">{tree ? JSON.stringify(tree, null, 2) : ""}</pre>
+        <pre className="mt-2 max-h-[30rem] overflow-auto rounded bg-gray-50 dark:bg-gray-900 p-3 text-xs">{tree ? JSON.stringify(tree, null, 2) : ""}</pre>
       </section>
-      <small className="text-gray-500">Developed using Next.js 16 and React 19</small>
+      <small className="text-gray-500 text-xs">Developed with Next.js 16 and React 19</small>
     </main>
   );
 }

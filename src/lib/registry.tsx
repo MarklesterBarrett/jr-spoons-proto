@@ -90,7 +90,7 @@ export const registry: {
 
         <div className="mt-2 flex flex-wrap gap-2">
           {(props.options ?? []).map((opt) => (
-            <button key={opt} type="button" onClick={() => ctx.onChooseSnacks(opt, requiredCount)} className="rounded-lg cursor-pointer border px-3 py-1.5 text-sm hover:bg-gray-100">
+            <button key={opt} type="button" onClick={() => ctx.onChooseSnacks(opt, requiredCount)} className="rounded-lg cursor-pointer border-2 border-green-500  px-3 py-1.5 text-sm hover:bg-green-500 transistion">
               {opt}
             </button>
           ))}
@@ -168,7 +168,9 @@ export const registry: {
         <button
           type="button"
           onClick={ctx.onReset}
-          className="flex w-full max-[480px]:w-full min-[481px]:w-auto items-center justify-center cursor-pointer rounded-lg border border-transparent p-0 text-sm font-medium text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 transition"
+          className="flex w-full max-[480px]:w-full min-[481px]:w-auto 
+        items-center justify-center cursor-pointer rounded-lg p-0 text-sm font-medium  text-red-600
+        hover:underline hover:underline-offset-2 transition"
         >
           {secondaryLabel}
         </button>
@@ -180,11 +182,7 @@ export const registry: {
     <>
       <h2 className="mt-2 text-xl font-semibold mb-2">{props.title}</h2>
       <p className="text-sm text-gray-500 mb-2">{props.message}</p>
-      <button
-        type="button"
-        onClick={ctx.onReset}
-        className="flex w-full max-[480px]:w-full min-[481px]:w-auto items-center justify-center cursor-pointer rounded-lg border border-transparent p-0 text-sm font-medium text-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 transition"
-      >
+      <button type="button" onClick={ctx.onReset} className="flex w-full max-[480px]:w-full min-[481px]:w-auto items-center justify-center cursor-pointer rounded-lg border border-transparent p-0 text-sm font-medium text-red-600  transition">
         {props.buttonLabel}
       </button>
     </>

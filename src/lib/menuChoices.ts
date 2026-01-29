@@ -161,7 +161,7 @@ export function resolveSnacks(prompt: string, context: ClientContext) {
 }
 
 export function resolveDrinks(prompt: string) {
-    const wantsGuinness = /\bguinness\b|\bguiness\b/i.test(prompt);
+    const wantsGuinness = /\b(guinness|guiness|guinness|guiness|ginness|giness|ginis|guines)\b/i.test(prompt);
     const guinnessQtyMatch = prompt.match(/(\d+)\s+pints?/i);
     const guinnessQty = guinnessQtyMatch ? Number(guinnessQtyMatch[1]) : (wantsGuinness ? 1 : 0);
     return { wantsGuinness, guinnessQty };
