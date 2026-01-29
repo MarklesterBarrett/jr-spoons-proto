@@ -149,10 +149,10 @@ export default function Page() {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-10">
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold">A Deterministic Ordering UX</h1>
-          <small className="text-gray-500">React 18. Only Guinness. and Crisps</small>
+          <h1 className="text-2xl font-semibold">PoC Deterministic UI</h1>
+          <small className="text-gray-500">Powered only by Guinness and crisps</small>
         </div>
         <button
           type="button"
@@ -165,13 +165,13 @@ export default function Page() {
       </div>
 
       {!tree ? (
-        <div className="mt-6 flex flex-col gap-2 min-[481px]:flex-row">
+        <div className="mt-4 flex flex-col gap-2 min-[481px]:flex-row">
           <label htmlFor="prompt" className="sr-only">
             Order prompt
           </label>
           <textarea name="prompt" rows={2} value={prompt} onChange={(e) => setPrompt(e.target.value)} className="w-full min-[481px]:flex-1 rounded-lg border px-3 py-2 text-sm" />
           <button type="button" onClick={submit} disabled={isStreaming} className="w-full min-[481px]:w-[100px] rounded-lg bg-green-500 px-4 py-2 text-sm text-white cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
-            {isStreaming ? "Working" : "Proceed"}
+            {isStreaming ? "Working" : "Order"}
           </button>
         </div>
       ) : null}
@@ -230,6 +230,7 @@ export default function Page() {
         <div className="text-xs text-gray-500">Raw tree</div>
         <pre className="mt-2 max-h-96 overflow-auto rounded bg-gray-50 p-3 text-xs">{tree ? JSON.stringify(tree, null, 2) : ""}</pre>
       </section>
+      <small className="text-gray-500">Developed using Next.js 16 and React 19</small>
     </main>
   );
 }

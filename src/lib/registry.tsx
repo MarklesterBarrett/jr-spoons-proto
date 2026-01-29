@@ -149,12 +149,9 @@ export const registry: {
 
     return (
       <div className="mt-4 space-y-2 text-sm">
-        {props.title ? <div className="font-medium">{props.title}</div> : null}
         {props.summary?.length ? (
           <div>
-            <div className="font-medium">
-              Order for Table <strong>{props.table}</strong>:
-            </div>
+            <div className="font-medium">{props.message ? <div className="font-medium">{props.message}</div> : null}</div>
             <ul className="mt-1 list-disc pl-5">
               {props.summary.map((item, i) => (
                 <li key={i}>{item}</li>
@@ -162,7 +159,8 @@ export const registry: {
             </ul>
           </div>
         ) : null}
-        {props.message ? <div className="font-medium">{props.message}</div> : null}
+        {props.title ? <div className="font-medium">{props.title}</div> : null}
+
         <button type="button" onClick={ctx.onPay} disabled={ctx.isPaying} className="flex w-full max-[480px]:w-full min-[481px]:w-48 items-center justify-center cursor-pointer rounded-lg bg-green-500 px-4 py-2 text-white disabled:opacity-70">
           {primaryLabel}
           {ctx.isPaying ? <span className="inline-block ml-2 h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" /> : <span className="inline-block ml-2">(mock)</span>}
