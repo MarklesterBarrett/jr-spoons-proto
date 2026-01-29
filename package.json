@@ -9,8 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@json-render/core": "workspace:*",
-    "@json-render/react": "workspace:*",
+    "@json-render/core": "0.2.0",
+    "@json-render/react": "0.2.0",
     "ai": "^6.0.49",
     "next": "16.1.4",
     "react": "19.2.3",
