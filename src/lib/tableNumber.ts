@@ -11,7 +11,7 @@ export function resolveTableNumber(
         : sessionTable;
 
     // If table missing - ask (Choice)
-    if (!Number.isInteger(tableNumber)) {
+    if (typeof tableNumber !== "number") {
         return requestTableNumber("What table number are you sat on?");
     }
 
