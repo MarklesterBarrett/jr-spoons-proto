@@ -103,12 +103,12 @@ export const registry: {
                 const value = chosenList[index];
                 return (
                   <li key={`bag-${index}`} className="flex items-center justify-between py-2">
-                    <div className={value ? "text-gray-900" : "text-gray-500"}>
+                    <div className={value ? "text-gray-900 dark:text-gray-100" : "text-gray-500 dark:text-gray-400"}>
                       Bag {index + 1} - <span>{value ?? "flavour?"}</span>
                     </div>
 
                     {value ? (
-                      <button type="button" onClick={() => ctx.onRemoveCrispsAt(index)} className="ml-3 cursor-pointer text-xs text-gray-900 hover:text-green-500">
+                      <button type="button" onClick={() => ctx.onRemoveCrispsAt(index)} className="ml-3 cursor-pointer text-xs text-gray-900 dark:text-gray-100 hover:text-green-500">
                         Change
                       </button>
                     ) : null}
